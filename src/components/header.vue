@@ -1,13 +1,50 @@
 <template>
   <div class="header">
-    <a href="javascript:" class="header-left">
-      <Icon type="ios-list" />
-      <p>深圳402科技有限公司</p>
-    </a>
-    <div class="header-center">
-      <h1>diandianrenwu</h1>
-      <Icon type="md-apps" />
-    </div>
+    <Poptip trigger="click" content="content" placement="bottom-start">
+        <a href="javascript:" class="header-left">
+          <Icon type="ios-list" />
+          <p>深圳402科技有限公司</p>
+        </a>
+        <div class="header-left-pop" slot="content">
+          <Card icon="ios-options" :padding="0" shadow style="width: 300px;">
+              <CellGroup>
+                  <Cell title="创建企业" selected/>
+                  <Cell title="test">
+                    <Badge class="header-badge" text="剩于14天" slot="extra" />
+                  </Cell>
+                  <Cell title="贵州蓝关科技有限公司">
+                    <Badge class="header-badge" text="已到期" slot="extra" />
+                  </Cell>
+                  <Cell title="个人项目"/>
+              </CellGroup>
+          </Card>
+        </div>
+    </Poptip>
+    
+    <Poptip trigger="click" content="content">
+      <div class="header-center">
+        <h1>diandianrenwu</h1>
+        <Icon type="md-apps" />
+      </div>
+      <div class="header-center-pop" slot="content">
+        <div class="header-center-pop-item">
+          <Icon class="header-center-pop-icon" type="logo-linkedin" />
+          <span>Teambition</span>
+        </div>
+        <div class="header-center-pop-item">
+          <Icon class="header-center-pop-icon" type="md-contacts" />
+          <span>成员</span>
+        </div>
+        <div class="header-center-pop-item">
+          <Icon class="header-center-pop-icon" type="md-pie" />
+          <span>统计</span>
+        </div>
+        <div class="header-center-pop-item">
+          <Icon class="header-center-pop-icon" type="md-settings" />
+          <span>管理后台</span>
+        </div>
+      </div>
+    </Poptip>
     <div class="header-right">
       <a href="javascript:" class="btn">工作台</a>
       <a href="javascript:" class="btn">日历</a>
@@ -40,13 +77,11 @@
 
 <script>
 export default {
-  name: 'header',
-  data () {
-    return {
-      
-    }
+  name: "header",
+  data() {
+    return {};
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -62,14 +97,45 @@ export default {
   padding: 20px;
   height: 50px;
   background: #fff;
-  box-shadow:  0 1px 3px 0 rgba(0,0,0,.15);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
+  .header-left {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    color: gray;
+  }
   .header-left:hover {
     color: #3da8f5;
   }
   .header-center {
+    display: flex;
+    align-items: center;
     color: #333;
   }
-  & > div, & > a {
+  .header-center-pop {
+    width: 180px;
+    padding: 20px;
+    padding-bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    color: #3da8f5;
+    &-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 70px;
+      margin-bottom: 20px;
+      span {
+        color: #333;
+      }
+    }
+    &-icon {
+      font-size: 40px;
+    }
+  }
+  & > div,
+  & > a {
     display: flex;
     align-items: center;
     font-size: 14px;

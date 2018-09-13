@@ -2,7 +2,7 @@
     <div class="login">
         <Form ref="formCustom" :model="loginForm" :rules="loginRule">
             <FormItem  prop="username">
-                <Input type="password" placeholder="用户名" v-model="loginForm.username"/>
+                <Input type="text" placeholder="用户名" v-model="loginForm.username"/>
             </FormItem>
             <FormItem  prop="password">
                 <Input type="password" placeholder="密码" v-model="loginForm.password"/>
@@ -16,36 +16,36 @@
 </template>
 <script>
 export default {
-  data () {
+  data() {
     return {
       loginForm: {
-        username: '',
-        password: ''
+        username: "",
+        password: ""
       },
       loginRule: {
         username: [
-          { required: true, message: '请输入用户名', trigger: 'blur' }
+          { required: true, message: "请输入用户名", trigger: "blur" }
         ],
         password: [
-          { required: true, message: '请填写密码', trigger: 'blur' },
-          { type: 'string', min: 6, message: '密码至少6位', trigger: 'blur' }
+          { required: true, message: "请填写密码", trigger: "blur" },
+          { type: "string", min: 6, message: "密码至少6位", trigger: "blur" }
         ]
       }
-    }
+    };
   },
   methods: {
-    handleSubmit (name) {
-      this.$refs[name].validate((valid) => {
+    handleSubmit(name) {
+      this.$refs[name].validate(valid => {
         if (valid) {
-          this.$Message.success('Success!')
-          this.$router.push('home')
+          this.$Message.success("Success!");
+          this.$router.push("home");
         } else {
-          this.$Message.error('请输入正确的用户名密码')
+          this.$Message.error("请输入正确的用户名密码");
         }
-      })
+      });
     }
   }
-}
+};
 </script>
 <style lang="scss" scoped>
 .login {
@@ -55,11 +55,10 @@ export default {
   top: 50%;
   transform: translate(-50%, -50%);
   .forget-psw {
-      position: absolute;
-      right: 0;
-      bottom: -28px;
-      color: #A6A6A6;
+    position: absolute;
+    right: 0;
+    bottom: -28px;
+    color: #a6a6a6;
   }
 }
-
 </style>
