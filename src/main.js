@@ -4,7 +4,7 @@ import router from './router'
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'
 import './assets/css/index.scss'
-
+import 'v-charts/lib/style.css'
 Vue.use(iView)
 
 Vue.config.productionTip = false

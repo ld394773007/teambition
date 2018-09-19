@@ -1,16 +1,16 @@
 <template>
     <div class="layout">
-        <Header></Header>
+        <i-header></i-header>
         <div class="content">
             <router-view></router-view>
         </div>
     </div>
 </template>
 <script>
-import Header from '@/components/header'
+import IHeader from '@/components/IHeader'
 export default {
   components: {
-      Header
+      IHeader
   },
   data() {
       return {}

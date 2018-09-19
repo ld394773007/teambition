@@ -77,7 +77,7 @@
 
 <script>
 export default {
-  name: "header",
+  name: "IHeader",
   data() {
     return {};
   }
@@ -108,9 +108,17 @@ export default {
     color: #3da8f5;
   }
   .header-center {
+    padding: 10px 0;
     display: flex;
     align-items: center;
     color: #333;
+    cursor: pointer;
+  }
+  .header-center h1 {
+    font-size: 18px;
+  }
+  .avatar-wrap {
+    cursor: pointer;
   }
   .header-center-pop {
     width: 180px;
@@ -142,7 +150,7 @@ export default {
     color: gray;
     i {
       margin: 0 6px;
-      font-size: 24px;
+      font-size: 18px;
     }
     .btn {
       padding: 0 16px;
